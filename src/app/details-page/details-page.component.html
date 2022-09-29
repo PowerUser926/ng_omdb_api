@@ -1,0 +1,22 @@
+<div class="my-3">
+  <a [routerLink]="['/searching']" class="btn btn-primary">< Back</a>
+</div>
+<div class="card mb-3 p-2 shadow" *ngIf="movie">
+  <h3>{{ movie.Title }} ({{ movie.Year }})</h3>
+  <div class="d-flex">
+    <img
+      [src]="
+        movie.Poster !== 'N/A' ? movie.Poster : '../../../assets/img/null.png'
+      "
+      alt="{{ movie.Title }} Poster"
+    />
+    <div class="w-75 py-2 px-4">
+      <p><span class="text-primary">Title: </span>{{ movie.Title }}</p>
+      <p><span class="text-primary">Year: </span>{{ movie.Year }}</p>
+      <p><span class="text-primary">Released: </span>{{ movie.Released }}</p>
+      <p><span class="text-primary">Genre: </span>{{ movie.Genre }}</p>
+      <p><span class="text-primary">Description: </span>{{ movie.Plot }}</p>
+      <p><span class="text-primary">Country: </span>{{ movie.Country }}</p>
+    </div>
+  </div>
+</div>

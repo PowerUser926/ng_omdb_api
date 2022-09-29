@@ -1,0 +1,13 @@
+<div class="searching-result" *ngIf="movies">
+  <div class="mt-5 text-center" *ngIf="loading">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <app-movie-card *ngFor="let movie of movies" [movie]="movie"></app-movie-card>
+
+  <div class="alert alert-warning" role="alert" *ngIf="movieNotFound">
+    Movie not found!
+  </div>
+</div>

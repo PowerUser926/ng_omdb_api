@@ -1,0 +1,20 @@
+<div class="card mb-3 p-2 flex-row shadow">
+  <img
+    [src]="
+      movie.Poster !== 'N/A' ? movie.Poster : '../../../assets/img/null.png'
+    "
+    alt="{{ movie.Title }} Poster"
+  />
+  <div class="w-75 py-2 px-4">
+    <p><span class="text-primary">Genre: </span>{{ movie.Genre }}</p>
+    <p><span class="text-primary">Title: </span>{{ movie.Title }}</p>
+    <p><span class="text-primary">Year: </span>{{ movie.Year }}</p>
+    <a
+      [routerLink]="['/details']"
+      [queryParams]="{ name: movie.Title }"
+      class="btn btn-primary"
+      (click)="selectMovie()"
+      >Details</a
+    >
+  </div>
+</div>
